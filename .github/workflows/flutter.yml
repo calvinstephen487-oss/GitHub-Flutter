@@ -3,7 +3,7 @@ name: Flutter CI
 on:
   push:
     branches:
-      - main  # Change to your repo's default branch if needed
+      - main  # or your branch name
 
 jobs:
   build:
@@ -15,7 +15,10 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: stable   # This will fetch latest stable Flutter
+          channel: stable
+
+      - name: Create dummy project
+        run: flutter create --project-name=test_dummy .
 
       - name: Install dependencies
         run: flutter pub get
