@@ -3,7 +3,7 @@ name: Flutter CI
 on:
   push:
     branches:
-      - main  # or change to your target branch, e.g. 'master'
+      - main  # Change to your repo's default branch if needed
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'  # or specify a version, e.g. '3.13.1'
+          channel: stable   # This will fetch latest stable Flutter
 
       - name: Install dependencies
         run: flutter pub get
